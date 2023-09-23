@@ -1,14 +1,43 @@
 # Spring Boot Kotlin sample project
 
-This is the source code for a sample Spring Boot application developed with Kotlin and Spring Data JPA.
-
-**See also https://github.com/spring-guides/tut-spring-boot-kotlin for a more complete Spring Boot + Kotlin + JPA example.**
 
 You can launch the application with by running:
 
-		$ ./gradlew bootRun
+1. Run Postgres Container on your localhost:5432 with this command
 
-Make sure you have at least IntelliJ IDEA 2022.3 and Kotlin plugin 1.8.x.
-This project uses a [Gradle Kotlin DSL](https://docs.gradle.org/current/userguide/kotlin_dsl.html).
+```docker run --name postgres -d -p 5432:5432 -e POSTGRES_PASSWORD=postgres postgres:alpine```
 
-This project is Apache 2.0 licensed.
+Once Docker is running run below Command inside the dierctory of the repo
+```./gradlew bootRun```
+
+Following API's will work
+
+
+Get All Customer
+```
+curl --request GET \
+  --url http://localhost:8080/customers
+```
+
+Save Customer Name and  Mobile
+```
+curl --request POST \
+  --url http://localhost:8080/save/name/Mobasshir/mobile/1234356
+```
+
+Get Customer By Mobile
+```
+curl --request GET \
+  --url http://localhost:8080/customers/find/mobile/91065566544
+```
+
+Get Customer By name
+```
+curl --request GET \
+  --url http://localhost:8080/customers/find/name/Jack
+```
+
+
+To check it database, please log into database using terminal or use apps like TablePlus/DBeaver
+
+
