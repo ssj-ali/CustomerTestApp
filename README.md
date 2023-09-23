@@ -1,4 +1,4 @@
-# Spring Boot Kotlin sample project
+# Spring Boot Kotlin sample Customer App
 
 
 You can launch the application with by running:
@@ -7,7 +7,7 @@ You can launch the application with by running:
 
 ```docker run --name postgres -d -p 5432:5432 -e POSTGRES_PASSWORD=postgres postgres:alpine```
 
-Once Docker is running run below Command inside the dierctory of the repo
+Once Docker is running, open the App in IDE then run below Command inside the dierctory of the repo
 ```./gradlew bootRun```
 
 Following API's will work
